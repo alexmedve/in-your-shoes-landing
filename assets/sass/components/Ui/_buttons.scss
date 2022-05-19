@@ -1,0 +1,39 @@
+.button {
+    &,
+    &:link,
+    &:visited {
+        font-family: 'Montserrat';
+        font-size: 20px;
+        line-height: 1;
+        letter-spacing: 0.8px;
+        font-weight: 600;
+        color: $color-white;
+        background-color: $color-primary;
+        padding: 8px 16px;
+        outline: none;
+        border: 2px solid $color-black;
+        box-shadow: $box-shadow;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    &--small {
+        &,
+        &:link,
+        &:visited {
+            font-size: 16px;
+        }
+    }
+
+    &--newsletter {
+        &,
+        &:link,
+        &:visited {
+            font-size: 16px;
+            box-shadow: none;
+            border-radius: 0 5px 5px 0;
+            background-color: $color-secondary;
+            transform: translateX(-5px);
+        }
+    }
+}

@@ -1,0 +1,77 @@
+.home-about {
+
+    &__first-content {
+        grid-column: 1 / span 8;
+        grid-row: 1;
+
+        @include media-breakpoint-down(md) {
+            grid-column: 1 / -1;
+        }
+
+        & > .body-copy {
+            max-width: 600px;
+            margin-top: 24px;
+        }
+    }
+
+    &__dots-container {
+        grid-column: 9 / span 4;
+
+        @include media-breakpoint-down(md) {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__dots {
+        width: 100%;
+    }
+
+    &__first-image {
+        height: 360px;
+        border-radius: $border-radius;
+        border: $border;
+        margin: 8px 0;
+    }
+
+    &__arrow {
+        width: 120px;
+        height: 190px;
+        grid-column: 3;
+        grid-row: 1;
+        margin-top: auto;
+
+        @include media-breakpoint-down(md) {
+            grid-column: 1 / -1;
+            margin: 0 auto;
+            grid-row: 3;
+        }
+    }
+
+    &__shoes-title {
+        grid-column: 1 / span 4;
+        margin-top: 80px;
+
+        @include media-breakpoint-down(md) {
+            grid-column: 1 / -1;
+            margin-top: 0;
+        }
+    }
+
+    &__second-content {
+        grid-column: 5 / -1;
+        margin-top: 150px;
+
+        @include media-breakpoint-down(md) {
+            grid-column: 1 / -1;
+            margin-top: 0;
+        }
+    }
+
+    &__shoes {
+        margin-top: 24px;
+        width: 100%;
+        height: 250px;
+        border-radius: $border-radius;
+        border: $border;
+    }
+}

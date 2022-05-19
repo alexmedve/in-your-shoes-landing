@@ -1,0 +1,17 @@
+.testimonial-card {
+    grid-column: span 6;
+    padding: 16px;
+
+    &__header {
+        display: flex;
+        margin-bottom: 16px;
+    }
+
+    &__logo {
+        width: 180px;
+        min-width: 180px;
+        height: 60px;
+        background-color: $color-secondary-light;
+        margin-right: 24px;
+    }
+}

@@ -1,0 +1,28 @@
+//colors
+$color-primary: #C86328;
+$color-secondary: #2868C8;
+$color-primary-light: #FFDCA8;
+$color-secondary-light: #A8B1FF;
+$color-white: #FBFBFB;
+$color-black: #121212;
+$color-red: #C82828;
+
+//breakpoints
+$breakpoint-xs: 375px;
+$breakpoint-xxs: 390px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-x: 1200px;
+$breakpoint-xl: 1367px;
+$breakpoint-xli: 1460px;
+$breakpoint-xi: 1681px;
+$breakpoint-fhd: 1921px;
+$breakpoint-2k: 2561px;
+$breakpoint-ik: 3340px;
+$breakpoint-4k: 3840px;
+
+//utilities
+$border: 3px solid $color-black;
+$box-shadow: -4px 4px 0px $color-black;
+$border-radius: 5px;

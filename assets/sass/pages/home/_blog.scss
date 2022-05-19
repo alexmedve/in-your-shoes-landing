@@ -1,0 +1,25 @@
+.home-blog {
+    &__text {
+        grid-column: 1 / span 3;
+
+        @include media-breakpoint-down(lg) {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__card {
+        &,
+        &:link,
+        &:visited {
+            grid-column: span 3;
+
+            @include media-breakpoint-down(xl) {
+                grid-column: 4 / -1;
+            }
+
+            @include media-breakpoint-down(lg) {
+                grid-column: 1 / -1;
+            }
+        }
+    }
+}

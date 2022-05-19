@@ -1,0 +1,21 @@
+.blog-card {
+    &,
+    &:link,
+    &:visited {
+        padding: 16px;
+        grid-column: span 6;
+        text-decoration: none;
+        transition: border-color .3s ease-out;
+    }
+
+    &__image {
+        height: 140px;
+        border-radius: 5px;
+        margin: 16px 0;
+        overflow: hidden;
+    }
+
+    &:hover {
+        border-color: $color-secondary;
+    }
+}
