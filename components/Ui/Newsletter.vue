@@ -14,7 +14,7 @@
             <UiButton
                 placeholder="Subscribe"
                 type="button"
-                class="button--newsletter"
+                class="button--secondary"
             />
         </div>
     </section>

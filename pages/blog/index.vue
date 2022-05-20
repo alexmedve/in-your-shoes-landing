@@ -15,6 +15,7 @@
 
 <script>
     export default {
+        name: 'blog',
         data() {
             return {
                 blogPosts: [

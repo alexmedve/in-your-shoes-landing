@@ -28,4 +28,26 @@
             font-size: 16px;
         }
     }
+
+    &--secondary {
+        &,
+        &:link,
+        &:visited {
+            font-size: 16px;
+            box-shadow: none;
+            background-color: $color-secondary;
+        }
+    }
+
+    &--red {
+        &,
+        &:link,
+        &:visited {
+            font-size: 16px;
+            box-shadow: none;
+            background-color: $color-white;
+            border-color: $color-red;
+            color: $color-red;
+        }
+    }
 }

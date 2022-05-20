@@ -58,3 +58,9 @@
         </section>
     </div>
 </template>
+
+<script>
+    export default {
+        name: 'blog-post'
+    }
+</script>
