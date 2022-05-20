@@ -2,6 +2,10 @@
     
     &__first-title {
         grid-column: 1 / span 5;
+
+        @include media-breakpoint-down(md) {
+            grid-column: 1 / -1;
+        }
     }
 
     &__list {
@@ -27,6 +31,7 @@
     &__item-icon {
         height: 26px;
         width: 26px;
+        min-width: 26px;
         margin-right: 16px;
     }
 

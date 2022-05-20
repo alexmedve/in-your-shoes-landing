@@ -2,7 +2,7 @@
     <div class="nuxt-layout">
         <UiNavbar />
         <Nuxt />
-        <UiCta />
+        <UiCta v-if="showCtaSection" />
         <UiNewsletter />
         <UiFooter />
     </div>
@@ -17,6 +17,11 @@ export default {
     },
     methods: {
         
+    },
+    computed: {
+        showCtaSection() {
+            return (this.$route.name !== 'contact');
+        }
     }
 }
 </script>

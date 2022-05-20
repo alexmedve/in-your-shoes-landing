@@ -1,0 +1,32 @@
+.input-group {
+    display: flex;
+
+    & > .input {
+        max-width: 280px;
+        width: 100%;
+    }
+
+    & > .button {
+        &,
+        &:link,
+        &:visited {
+            font-size: 16px;
+            box-shadow: none;
+            border-radius: 0 5px 5px 0;
+            background-color: $color-secondary;
+            transform: translateX(-5px);
+
+            @include media-breakpoint-down(md) {
+                transform: none;
+                border-radius: 5px;
+                margin-top: 8px;
+                max-width: 280px;
+                width: 100%;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+    }
+}

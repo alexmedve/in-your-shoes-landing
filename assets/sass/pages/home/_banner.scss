@@ -8,6 +8,7 @@
 
     @include media-breakpoint-down(md) {
         flex-direction: column;
+        margin-top: 48px;
     }
     
     &__content {
@@ -33,6 +34,10 @@
         height: 80px;
         width: 185px;
         margin-right: 24px;
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
     }
 
     &__image {    
@@ -41,6 +46,8 @@
 
         @include media-breakpoint-down(lg) {
             height: 250px;
+            max-width: 100%;
+            width: 100%;
         }
     }
 }

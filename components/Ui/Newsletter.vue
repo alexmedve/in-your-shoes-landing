@@ -6,7 +6,7 @@
         <h3 class="heading-3">
             We’ll only send relevant content. We promise :)
         </h3>
-        <div class="newsletter-section__input">
+        <div class="input-group">
             <UiInput
                 name="newsletter-input"
                 placeholder="Your email adress"

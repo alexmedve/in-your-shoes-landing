@@ -1,19 +1,16 @@
 <template>
     <div class="input">
-        <input
-            :type="type"
+        <textarea
             :placeholder="placeholder"
+            :value="value"
             :name="name"
             :id="name"
-            :value="value"
-            :disabled="disabled"
-            step=".01"
             class="input__field"
             @keyup="$emit('keyup', $event.target.value)"
             @input="$emit('input', $event.target.value)"
-            @blur="$emit('blur')"
-        >
-        <div class="small-copy" v-if="error">
+            @blur="$emit('blur')">
+        </textarea>
+        <div class="error-text" v-if="error">
             {{error}}
         </div>
     </div>
@@ -22,9 +19,9 @@
 <script>
 export default {
     props: {
-        type: {
+        label: {
             type: String,
-            default: 'text'
+            default: null
         },
         name: {
             type: String,
@@ -35,16 +32,12 @@ export default {
             default: null
         },
         value: {
-            type: [String, Number],
+            type: String,
             default: null
         },
         error: {
             type: String,
             default: null
-        },
-        disabled: {
-            type: Boolean,
-            default: false
         }
     }
 }

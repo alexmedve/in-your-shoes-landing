@@ -1,0 +1,35 @@
+.about-mission {
+
+    &__first-title {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-bottom: 100px;
+
+        @include media-breakpoint-down(md) {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__second-title {
+        grid-column: 1 / span 4;
+
+        @include media-breakpoint-down(md) {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__content {
+        grid-column: 5 / -1;
+
+        @include media-breakpoint-down(md) {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__image {
+        margin-top: 40px;
+        height: 250px;
+        border-radius: 5px;
+        border: $border;
+    }
+}

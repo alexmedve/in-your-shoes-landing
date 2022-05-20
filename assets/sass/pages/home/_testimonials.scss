@@ -18,15 +18,23 @@
             user-select: unset;
             pointer-events: unset;
         }
+
+        @include media-breakpoint-down(md) {
+            grid-column: 1 / -1;
+        }
     }
 
     &__dots {
-        grid-column: 6 / span 2;
+        grid-column: 1 / -1;
         margin: 40px auto 0;
         display: flex;
 
         & > :not(:last-child) {
             margin-right: 8px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin: 16px auto 0;
         }
     }
 

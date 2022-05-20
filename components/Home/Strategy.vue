@@ -49,7 +49,7 @@
             class="home-strategy__step card-white"
         >
             <div class="home-strategy__step-header">
-                <div class="home-strategy__step-number heading-4">
+                <div class="home-strategy__step-number heading-4 u-text-secondary">
                     {{'0'+ (i + 1)}}
                 </div>
                 <div class="home-strategy__step-header-line"></div>

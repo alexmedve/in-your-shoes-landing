@@ -1,4 +1,4 @@
-.input-group {
+.input {
     position: relative;
 
     &__field {
@@ -6,6 +6,7 @@
         background-color: $color-white;
         padding: 8px 16px;
         border: $border;
+        width: 100%;
         outline: none;
         border-radius: $border-radius;
 

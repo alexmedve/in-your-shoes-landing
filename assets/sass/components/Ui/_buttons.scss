@@ -15,6 +15,10 @@
         box-shadow: $box-shadow;
         text-decoration: none;
         white-space: nowrap;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 18px;
+        }
     }
 
     &--small {
@@ -22,18 +26,6 @@
         &:link,
         &:visited {
             font-size: 16px;
-        }
-    }
-
-    &--newsletter {
-        &,
-        &:link,
-        &:visited {
-            font-size: 16px;
-            box-shadow: none;
-            border-radius: 0 5px 5px 0;
-            background-color: $color-secondary;
-            transform: translateX(-5px);
         }
     }
 }

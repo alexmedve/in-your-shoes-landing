@@ -9,6 +9,7 @@
 
 @import "components/Ui/buttons";
 @import "components/Ui/input";
+@import "components/Ui/input-group";
 @import "components/Ui/termsCheck";
 @import "components/Ui/checkbox";
 @import "components/Ui/loader";
@@ -27,5 +28,14 @@
 @import "pages/home/strategy";
 @import "pages/home/testimonials";
 @import "pages/home/blog";
+
+@import "pages/about/mission";
+@import "pages/about/team";
+@import "pages/about/values";
+
+@import "pages/contact/form";
+
+@import "pages/blog/post";
+@import "pages/blog/page";
 
 @import "pages/terms";
