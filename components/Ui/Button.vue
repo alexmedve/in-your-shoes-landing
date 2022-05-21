@@ -17,7 +17,7 @@
         {{placeholder}}
     </button>
     <NuxtLink
-        v-else-if="type == 'route-link'" 
+        v-else-if="type == 'router-link'" 
         :to="link"
         class="button"
     >
