@@ -1,5 +1,5 @@
 <template>
-    <section class="home-testimonials section-m-top section-white">
+    <section class="home-testimonials section-m-top">
         <div class="container">
             <div class="heading-2">
                 Testimonials

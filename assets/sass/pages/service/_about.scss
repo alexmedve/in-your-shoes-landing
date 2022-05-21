@@ -1,0 +1,52 @@
+.service-about {
+    &__content {
+        grid-column: 1 / span 6;
+
+        &--second {
+            margin-top: 100px;
+
+            @include media-breakpoint-down(lg) {
+                margin-top: 0;
+            }
+        }
+
+        &--second > .body-copy {
+            display: block;
+            margin: 16px 0 24px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__image {
+        grid-column: 9 / span 4;
+        height: 360px;
+        border-radius: 5px;
+        border: $border;
+        overflow: hidden;
+
+        @include media-breakpoint-down(lg) {
+            max-width: 440px;
+            width: 100%;    
+            grid-column: 1 / -1;
+        }
+
+        @include media-breakpoint-down(sm) {
+            height: 250px;
+        }
+    }
+
+    &__dots {
+        grid-column: 9 / span 4;
+        height: min-content;
+        margin-top: 100px;
+
+        @include media-breakpoint-down(lg) {
+            grid-column: 1 / -1;
+            grid-row: 3;
+            margin-top: 16px;
+        }
+    }
+}
