@@ -4,13 +4,67 @@
     flex-direction: column;
     align-items: center;
     padding: 0 16px;
+    text-align: center;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-    & > .heading-2 {
-        text-align: center;
+        & > .heading-3 {
+            margin: 16px 0 24px;
+        }
+
+        & > .button {
+            margin-top: 8px;
+        }
     }
 
-    & > .heading-3 {
-        margin: 16px 0 24px;
-        text-align: center;
+    &__frequency {
+        display: flex;
+        border-radius: $border-radius;
+        overflow: hidden;
+        border: $border;
+        width: min-content;
+        margin: 16px 0;
+
+        & > :nth-child(2) {
+            border-left: $border;
+            border-right: $border;
+        }
+    }
+
+    &__frequency-item {
+        width: 100px;
+        @include center-flex;
+        padding: 8px 16px;
+        background-color: $color-white;
+
+        &--active {
+            background-color: $color-secondary;
+            color: $color-white;
+        }
+    }
+
+    &__content-row {
+        @include center-flex;
+        width: 100%;
+        max-width: 560px;
+        flex-wrap: wrap;
+        margin-right: -16px;
+    }
+
+    &__content-pill {
+        padding: 8px;
+        background-color: $color-white;
+        border: $border;
+        border-radius: 25px;
+        white-space: nowrap;
+        margin-bottom: 16px;
+        margin-right: 16px;
+
+        &--active {
+            background-color: $color-secondary;
+            color: $color-white;
+        }
     }
 }
