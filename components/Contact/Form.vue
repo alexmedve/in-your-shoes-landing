@@ -10,28 +10,54 @@
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
             </p>
         </div>
-        <!-- <form @submit.prevent="sendForm" class="contact-form__form" v-if="!formSent && !isLoading"> -->
-        <form class="contact-form__form">
+        <form @submit.prevent="sendForm" class="contact-form__form">
             <UiInput
                 name="contact-name"
-                placeholder="Fullname"
+                placeholder="name"
+                @input="contactForm.name = $event, validateName()"
+                @blur="validateName"
+                :value="contactForm.name"
+                :error="errors.name"
             />
             <UiInput
                 name="contact-company"
                 placeholder="Company name"
+                @input="contactForm.company = $event"
+                :value="contactForm.company"
             />
             <UiInput
                 name="contact-email"
                 placeholder="Email"
+                @input="contactForm.email = $event, validateEmail()"
+                @blur="validateEmail"
+                :value="contactForm.email"
+                :error="errors.email"
             />
             <UiInput
                 name="contact-phone"
                 placeholder="Phone number"
+                @input="contactForm.phone = $event"
+                :value="contactForm.phone"
             />
             <UiTextarea
                 name="contact-message"
                 placeholder="Message"
+                @input="contactForm.message = $event"
+                :value="contactForm.message"
             />
+            <div class="checkbox">
+                <input
+                    type="checkbox"
+                    id="newsletter-checkbox"
+                    v-model="contactForm.newsletter"
+                >
+                <label for="newsletter-checkbox" class="body-copy">
+                    Subscribe to our newsletter? We'll only send you relevant content.
+                </label>
+            </div>
+            <div class="small-copy u-text-danger u-text-semibold" v-if="errors.form">
+                {{errors.form}}
+            </div>
             <UiButton
                 placeholder="Send message"
                 type="submit"
@@ -40,152 +66,91 @@
     </header>
 </template>
 
-// <script>
-// export default {
-//     data() {
-//         return {
-//             contactFormData: {
-//                 fullname: null,
-//                 email: null,
-//                 phone: null,
-//                 message: null,
-//                 termsCheck: false,
-//                 recaptchaToken: null
-//             },
-//             errors: {
-//                 fullname: null,
-//                 email: null,
-//                 phone: null,
-//                 message: null,
-//                 termsCheck: null,
-//                 form: null,
-//                 recaptcha: null
-//             },
-//             renderRecaptcha: true,
-//             formSent: false,
-//             isLoading: false
-//         }
-//     },
-//     computed: {
-//         validateForm() {
-//             if(
-//                 this.contactFormData.fullname &&
-//                 this.contactFormData.email &&
-//                 this.contactFormData.phone &&
-//                 this.contactFormData.termsCheck &&
-//                 this.contactFormData.message &&
-//                 !this.errors.fullname &&
-//                 !this.errors.email &&
-//                 !this.errors.phone &&
-//                 !this.errors.termsCheck &&
-//                 !this.errors.message
-//             )
-//                 return true;
-//             return false;
-//         }
-//     },
-//     mounted() {
-//         this.initRecaptcha();
-//     },
-//     methods: {
-//         async sendForm(e) {
-//             if(this.validateForm)
-//             {
-//                 try {
-//                     this.contactFormData.recaptchaToken = await this.$recaptcha.getResponse()
-//                     let apiFormData = {
-//                         name: this.contactFormData.fullname,
-//                         phone_number: this.contactFormData.phone,
-//                         email: this.contactFormData.email,
-//                         message: this.contactFormData.message,
-//                         "g-recaptcha-response": this.contactFormData.recaptchaToken
-//                     };
-//                     this.isLoading = true;
-//                     this.$axios.post('/contact', apiFormData)
-//                     .then(res => {
-//                         this.resetForm();
-//                         this.resetRecaptcha();
-//                         this.formSent = true;
-//                         this.isLoading = false;
-//                     })
-//                     .catch(err => {
-//                         this.errors.form = 'Vă rugăm sa mai încercați o dată';
-//                         this.isLoading = false;
-//                     });
-//                 } catch (error) {
-//                     this.errors.form = 'Vă rugăm sa mai încercați o dată';
-//                     this.isLoading = false;
-//                 }
-//             }
-//             else
-//                 this.errors.form = 'Vă rugăm sa completați corect formularul';
-//         },
-//         validateEmail() {
-//             if(this.$validate.email(this.contactFormData.email))
-//                 this.errors.email = null;
-//             else
-//                 this.errors.email = 'Adresa de email introdusă este invalidă';
-//         },
-//         validatePhoneNumber() {
-//             if(this.$validate.phone(this.contactFormData.phone))
-//                 this.errors.phone = null;
-//             else
-//                 this.errors.phone = 'Numărul de telefon este invalid';
-//         },
-//         validateFullname() {
-//             if(this.$validate.fullname(this.contactFormData.fullname))
-//                 this.errors.fullname = null;
-//             else
-//                 this.errors.fullname = 'Numele poate fi format doar din litere și spații'
-//         },
-//         validateMessage() {
-//             if(this.$validate.message(this.contactFormData.message))
-//                 this.errors.message = null;
-//             else
-//                 this.errors.message = 'Mesajul poate contine intre 8 si 256 de caractere';
-//         },
-//         recaptchaError(type) {
-//             if(type == 'error')
-//                 this.errors.recaptcha = 'Eroare Recaptcha, incercati din nou'
-//             else if(type == 'expired')
-//                 this.errors.recaptcha = 'Campul Recaptcha a expirat'
-//         },
-//         recaptchaSuccess(token) {
-//             this.contactFormData.recaptchaToken = token;
-//         },
-//         resetForm() {
-//             this.contactFormData.fullname = null;
-//             this.contactFormData.email = null;
-//             this.contactFormData.phone = null;
-//             this.contactFormData.termsCheck = false;
-//             this.contactFormData.message = null;
-//             this.contactFormData.recaptchaToken = null;
-//             this.errors.fullname = null;
-//             this.errors.email = null;
-//             this.errors.phone = null;
-//             this.errors.message = null;
-//             this.errors.termsCheck = null;
-//             this.errors.form = null;
-//             this.errors.recaptcha = null;
+<script>
+import {mapGetters, mapActions} from 'vuex';
 
-//             this.$recaptcha.reset();
-//         },
-//         async initRecaptcha() {
-//             try {
-//                 await this.$recaptcha.init();
-//             } catch (e) {
-//                 console.error(e);
-//             }
-//         },
-//         resetRecaptcha() {
-//             this.renderRecaptcha = false;
-//             setTimeout(() => {
-//                 this.renderRecaptcha = true;
-//             }, 1000)
-//         }
-//     },
-//     beforeDestroy() {
-//         this.$recaptcha.destroy()
-//     }
-// }
-// </script>
+export default {
+    data() {
+        return {
+            contactForm: {
+                name: null,
+                email: null,
+                company: null,
+                phone: null,
+                message: null,
+                newsletter: false
+            },
+            errors: {
+                name: null,
+                email: null,
+                phone: null,
+                company: null,
+                message: null,
+                newsletter: null,
+                form: null
+            }
+        }
+    },
+    computed: {
+        ...mapGetters({
+            isLoadingContact: 'isLoadingContact',
+            isContactSent: 'isContactSent',
+            contactError: 'contactError'
+        }),
+        validateForm() {
+            if(
+                this.contactForm.name &&
+                this.contactForm.email &&
+                this.contactForm.phone &&
+                this.contactForm.company &&
+                this.contactForm.message &&
+                !this.errors.name &&
+                !this.errors.email &&
+                !this.errors.phone &&
+                !this.errors.company &&
+                !this.errors.newsletter &&
+                !this.errors.message
+            )
+                return true;
+            return false;
+        }
+    },
+    methods: {
+        ...mapActions({
+            sendContactForm: 'sendContactForm'
+        }),
+        async sendForm(e) {
+            if(this.validateForm)
+            {
+                this.sendContactForm(this.contactForm);
+            }
+            else
+                this.errors.form = 'Please fill in the form';
+        },
+        validateEmail() {
+            if(this.$validate.email(this.contactForm.email))
+                this.errors.email = null;
+            else
+                this.errors.email = 'The email adress is invalid. It should be example@domain.com';
+        },
+        validateName() {
+            if(this.$validate.nameformat(this.contactForm.name))
+                this.errors.name = null;
+            else
+                this.errors.name = 'The name can only contain letters and spaces'
+        },
+        resetForm() {
+            this.contactForm.name = null;
+            this.contactForm.email = null;
+            this.contactForm.phone = null;
+            this.contactForm.newsletter = false;
+            this.contactForm.message = null;
+            this.errors.name = null;
+            this.errors.email = null;
+            this.errors.phone = null;
+            this.errors.message = null;
+            this.errors.form = null;
+        },
+    }
+}
+</script>

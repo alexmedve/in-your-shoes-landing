@@ -1,0 +1,53 @@
+.cookie-banner {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    padding: 8px 0;
+    background-color: $color-secondary;
+    z-index: 90;
+    opacity: .7;
+    transition: opacity .2s ease-out;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    @include media-breakpoint-down(lg) {
+        padding-top: 32px;
+    }
+
+    & > .container {
+        position: relative;
+    }
+
+    & > .container > .small-copy {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    &__link {
+        &,
+        &:visited,
+        &:link {
+            color: $color-white
+        }
+    }
+
+    &__close {
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        cursor: pointer;
+
+        @include media-breakpoint-down(lg) {
+            top: 0;
+            transform: none;
+            top: -24px;
+            right: 16px;
+        }
+    }
+}

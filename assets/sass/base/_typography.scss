@@ -102,13 +102,26 @@
         height: 10px;
         background-color: $color-secondary-light;
         left: 0;
-        bottom: 0;
+        bottom: 5px;
         z-index: -1;
+
+        @include media-breakpoint-down(xl) {
+            bottom: 2px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            height: 5px;
+            bottom: 3px;
+        }
     }
 }
 
-.heading-2 > .text-highlight {
+.heading-3 > .text-highlight {
     &::before {
-        bottom: 5px;
+        bottom: 0;
+
+        @include media-breakpoint-down(lg) {
+            bottom: 2px;
+        }
     }
 }

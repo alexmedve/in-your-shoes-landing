@@ -9,8 +9,20 @@
             </h3>
             <div class="input-group">
                 <UiInput
+                    name="newsletter-name"
+                    placeholder="Your name"
+                    @input="newsletter.name = $event, validateName()"
+                    @blur="validateName"
+                    :value="newsletter.name"
+                    :error="errors.name"
+                />
+                <UiInput
                     name="newsletter-input"
                     placeholder="Your email adress"
+                    @input="newsletter.email = $event, validateEmail()"
+                    @blur="validateEmail"
+                    :value="newsletter.email"
+                    :error="errors.email"
                 />
                 <UiButton
                     placeholder="Subscribe"
@@ -30,13 +42,28 @@
                 Email frequency:
             </h4>
             <div class="newsletter-section__frequency">
-                <div class="newsletter-section__frequency-item newsletter-section__frequency-item--active heading-4">
+                <div
+                    @click="newsletterFrequency = 'daily'"
+                    :class="['newsletter-section__frequency-item',
+                    'heading-4',
+                    {'newsletter-section__frequency-item--active': newsletterFrequency == 'daily'}]"
+                >
                     Daily
                 </div>
-                <div class="newsletter-section__frequency-item heading-4">
+                <div
+                    @click="newsletterFrequency = 'weekly'"
+                    :class="['newsletter-section__frequency-item',
+                    'heading-4',
+                    {'newsletter-section__frequency-item--active': newsletterFrequency == 'weekly'}]"
+                >
                     Weekly
                 </div>
-                <div class="newsletter-section__frequency-item heading-4">
+                <div 
+                    @click="newsletterFrequency = 'monthly'"
+                    :class="['newsletter-section__frequency-item',
+                    'heading-4',
+                    {'newsletter-section__frequency-item--active': newsletterFrequency == 'monthly'}]"
+                >
                     Monthly
                 </div>
             </div>
@@ -44,7 +71,13 @@
                 Preferred content:
             </h4>
             <div class="newsletter-section__content-row">
-                <div class="newsletter-section__content-pill heading-4 newsletter-section__content-pill--active">
+                <div
+                    @click="newsletterCategories = []"
+                    :class="['newsletter-section__content-pill',
+                        'heading-4',
+                        {'newsletter-section__content-pill--active': newsletterCategories.length == 0}
+                    ]"
+                >
                     All content
                 </div>
             </div>
@@ -52,7 +85,12 @@
                 <div
                     v-for="(category, i) in categories"
                     :key="'category' + i"
-                    class="newsletter-section__content-pill heading-4"
+                    @click="addNewsletterCategory(category.id)"
+                    :class="[
+                        'newsletter-section__content-pill',
+                        'heading-4',
+                        {'newsletter-section__content-pill--active': newsletterCategories.includes(category.id)}
+                    ]"
                 >
                     {{category.name}}
                 </div>
@@ -64,15 +102,27 @@
         </div>
         <UiLoader
             text="We are subscribing you..."
-            v-else
+            v-else-if="!isSent && isLoading"
         />
     </section>
 </template>
 
 <script>
+    import {mapGetters, mapActions} from 'vuex';
+
     export default {
         data() {
             return {
+                newsletter: {
+                    name: null,
+                    email: null,
+                },
+                newsletterFrequency: 'daily',
+                newsletterCategories: [],
+                errors: {
+                    name: null,
+                    email: null
+                },
                 isLoading: false,
                 isSent: true,
                 categories: [
@@ -105,6 +155,52 @@
                         id: 7
                     }
                 ]
+            }
+        },
+        computed: {
+            validateForm() {
+                if(
+                    this.newsletter.name &&
+                    this.newsletter.email &&
+                    !this.errors.name &&
+                    !this.errors.email
+                )
+                    return true;
+                return false;
+            },
+            ...mapGetters({
+                isLoadingNewsletter: 'isLoadingNewsletter',
+                isNewsletterSubscribed: 'isNewsletterSubscribed',
+                newsletterError: 'newsletterError'
+            })
+        },
+        methods: {
+            ...mapActions({
+                subscribeToNewsletter: 'subscribeToNewsletter'
+            }),
+            validateName() {
+                if(this.$validate.nameformat(this.newsletter.name))
+                    this.errors.name = null;
+                else
+                    this.errors.name = 'The name can only contain letters and spaces'
+            },
+            validateEmail() {
+                if(this.$validate.email(this.newsletter.email))
+                    this.errors.email = null;
+                else
+                    this.errors.email = 'The email adress is invalid';
+            },
+            addNewsletterCategory(categoryId) {
+                console.log(33);
+                if(this.newsletterCategories.includes(categoryId)) {
+                    for(let i = 0; i < this.newsletterCategories.length; i++) {
+                        if(this.newsletterCategories[i] == categoryId) {
+                            this.newsletterCategories.splice(i, 1);
+                            return;
+                        }
+                    }
+                } else
+                    this.newsletterCategories.push(categoryId);
             }
         }
     }

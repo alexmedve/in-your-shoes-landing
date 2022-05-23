@@ -16,10 +16,10 @@
     }
 
     & > .small-copy {
-        position: absolute;
         color: $color-red;
         font-weight: 600;
         left: 0;
-        bottom: -24px;
+        margin-top: 8px;
+        text-align: left;
     }
 }

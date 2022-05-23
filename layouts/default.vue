@@ -5,6 +5,7 @@
         <UiCta v-if="showCtaSection" />
         <UiNewsletter />
         <UiFooter />
+        <UiCookieBanner />
     </div>
 </template>
 

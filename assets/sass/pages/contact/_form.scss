@@ -29,6 +29,15 @@
             margin-top: 8px;
         }
 
+        & > .checkbox {
+            width: 100%;
+        }
+
+        & > .small-copy {
+            margin-top: 8px;
+            width: 100%;
+        }
+
         @include media-breakpoint-down(lg) {
             grid-column: 1 / -1;
             padding-top: 0;

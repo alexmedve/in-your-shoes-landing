@@ -1,6 +1,6 @@
 const validate = {
     name: 'Validate',
-    fullname(value) {
+    nameformat(value) {
         const re = /^[a-zA-Z\s]*$/;
         return re.test(String(value).toLowerCase());
     },

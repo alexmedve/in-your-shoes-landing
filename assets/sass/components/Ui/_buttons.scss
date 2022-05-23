@@ -17,6 +17,7 @@
         box-shadow: $box-shadow;
         text-decoration: none;
         white-space: nowrap;
+        cursor: pointer;
 
         @include media-breakpoint-down(lg) {
             font-size: 18px;
@@ -38,6 +39,7 @@
             font-size: 16px;
             box-shadow: none;
             background-color: $color-secondary;
+            border-radius: 5px;
         }
     }
 
