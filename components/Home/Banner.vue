@@ -3,9 +3,9 @@
         <header class="home-banner">
             <div class="home-banner__content">
                 <h1 class="heading-1">
-                    Descriptive title with
+                    Walking with you
                     <br>
-                    value proposition
+                    towards your goals
                 </h1>
                 <h3 class="heading-3">
                     The digital marketing agency that walks

@@ -6,7 +6,7 @@
                     Who we are
                 </h2>
                 <p class="body-copy">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    A Digital Consulting Agency based in Romania. We are a team of Developers, Designers and Marketing Specialists who are working together to get the best overview of the online business industry. Our passions complement one another and we always deliver to our client's expectations. Even beyond.
                 </p>
             </div>
             <div class="home-about__dots-container">
@@ -30,7 +30,7 @@
             </h2>
             <div class="home-about__second-content">
                 <p class="body-copy">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    Just like a person, a business has it's own "personality traits and needs". You have to really know it to get the best out of it. That's always our starting point, putting ourselves in the client's shoes and becoming somewhat of a "in-house team".
                 </p>
                 <div class="home-about__shoes">
                     <img src="@/assets/images/home-about-shoes.jpg" alt="Shoes" class="u-image-cover">

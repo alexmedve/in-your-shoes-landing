@@ -5,23 +5,24 @@
                 <div class="service-about__content">
                     <h2 class="heading-2">
                         <span class="text-highlight">
-                            Digital marketing
+                            Consulting
                         </span>
                     </h2>
                     <p class="body-copy">
-                        Descriere digital marketing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        In one sentence, digital consulting is a focused form of management consulting designed to enable firms to better leverage their data and technology and create business value.
                     </p>
                 </div>
                 <div class="service-about__image">
-                    <img src="@/assets/images/home-about.jpg" alt="Digital Marketing" class="u-image-cover">
+                    <img src="@/assets/images/consulting.png" alt="Consulting" class="u-image-cover">
                 </div>
                 <div class="service-about__content service-about__content--second">
                     <h2 class="heading-2">
-                        Digital marketing that
+                        Consulting that
                         breaks through the noise
                     </h2>
                     <p class="body-copy">
-                        Ce are digital marketingul nostru special Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        InYourShoes understands the obstacles in our clients journey towards success.
+                        We help our customers realize what they can do better, while also setting an implementation strategy and supporting in the execution of the advices provided to achieve an improved and stronger model. 
                     </p>
                     <UiButton
                         placeholder="Let's talk"
@@ -30,7 +31,7 @@
                     />
                 </div>
                 <div class="service-about__dots">
-                    <img src="@/assets/images/home-about-dots.svg" alt="Digital Marketing" class="u-image-contain">
+                    <img src="@/assets/images/home-about-dots.svg" alt="Consulting" class="u-image-contain">
                 </div>
             </div>
         </section>

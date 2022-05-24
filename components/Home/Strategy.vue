@@ -14,7 +14,7 @@
                     <img src="@/assets/icons/sad-face.svg" alt="Sad face" class="u-image-contain">
                 </div>
                 <p class="body-copy">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+                    You are overwhelmed by how big the digital marketing world is and you're not sure where to start
                 </p>
             </div>
             <div class="home-strategy__item">
@@ -22,7 +22,7 @@
                     <img src="@/assets/icons/sad-face.svg" alt="Sad face" class="u-image-contain">
                 </div>
                 <p class="body-copy">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+                    You are taking your first steps in your business and want to make sure your online profile is on point.
                 </p>
             </div>
             <div class="home-strategy__item">
@@ -30,7 +30,7 @@
                     <img src="@/assets/icons/sad-face.svg" alt="Sad face" class="u-image-contain">
                 </div>
                 <p class="body-copy">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+                    You are not reaching enough customers and it's hard to close a sale
                 </p>
             </div>
             <div class="home-strategy__line"></div>
@@ -73,19 +73,19 @@
                 steps: [
                     {
                         title: 'Research and discovery',
-                        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been  Lorem Ipsum has been Lorem Ipsum has been '
+                        content: 'Understanding the business we are working with and it\'s clients is the key to making good choices in digital marketing.'
                     },
                     {
                         title: 'Strategy',
-                        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been  Lorem Ipsum has been Lorem Ipsum has been  '
+                        content: 'With enough information from the previous phase, we\'ll tailor a custom plan that fits like a glove!'
                     },
                     {
                         title: 'Project management',
-                        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been  Lorem Ipsum has been Lorem Ipsum has been  '
+                        content: 'No need to worry that the final product won\'t deliver, we\'ll watch closely so that you can just sit back and watch your growth.'
                     },
                     {
                         title: 'Success measurement',
-                        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been  Lorem Ipsum has been Lorem Ipsum has been '
+                        content: 'We\'ll make you a good-looking report showing you how much your business has grown since you gave it new shoes from us!'
                     },
                 ]
             }

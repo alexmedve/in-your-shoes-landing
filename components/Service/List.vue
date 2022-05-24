@@ -36,9 +36,9 @@
                         route: 'consulting'
                     },
                     { 
-                        name: 'Digital marketing',
+                        name: 'Data Analytics',
                         description: '2-3 cuvinte despre serviciu',
-                        route: 'digital-marketing'
+                        route: 'data-analytics'
                     },
                     { 
                         name: 'Email campaigns',
