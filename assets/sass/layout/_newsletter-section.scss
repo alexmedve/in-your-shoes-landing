@@ -32,6 +32,17 @@
             border-left: $border;
             border-right: $border;
         }
+
+        @include media-breakpoint-down(xs) {
+            flex-direction: column;
+            width: 100%;
+
+            & > :nth-child(2) {
+                border: none;
+                border-top: $border;
+                border-bottom: $border;
+            }
+        } 
     }
 
     &__frequency-item {
@@ -54,6 +65,10 @@
                 color: $color-white;
             }
         }
+
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        } 
     }
 
     &__content-row {
