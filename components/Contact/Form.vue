@@ -102,8 +102,6 @@ export default {
                 this.contactForm.name &&
                 this.contactForm.email &&
                 this.contactForm.phone &&
-                this.contactForm.company &&
-                this.contactForm.message &&
                 !this.errors.name &&
                 !this.errors.email &&
                 !this.errors.phone &&
