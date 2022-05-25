@@ -53,7 +53,7 @@ export default {
   },
 
   publicRuntimeConfig: {
-    baseURL: process.env.API_BASE_URL || 'http://127.0.0.1:8000'
+    baseURL: process.env.API_BASE_URL || 'http://127.0.0.1:8000/api'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

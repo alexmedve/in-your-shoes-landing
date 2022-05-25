@@ -2,6 +2,7 @@ const state = () => ({
     //newsletter
     isLoadingNewsletter: false,
     isNewsletterSubscribed: false,
+    isNewsletterUpdated: false,
     newsletterError: null,
     //contact form
     isLoadingContact: false,
@@ -13,7 +14,9 @@ const state = () => ({
     articlesErrors: null,
     isLoadingArticle: false,
     article: null,
-    articlesErrors: null,
+    articleErrors: null,
+    //categories
+    categories: [],
     //user tracking
     session: {
         key: null,

@@ -1,6 +1,6 @@
 <template>
     <section class="newsletter-section section-m-top">
-        <div class="newsletter-section__container" v-if="!isSent && !isLoading">
+        <div class="newsletter-section__container" v-if="!isNewsletterSubscribed && !isLoadingNewsletter">
             <h2 class="heading-2">
                 Subscribe to our newsletter
             </h2>
@@ -28,12 +28,16 @@
                     placeholder="Subscribe"
                     type="button"
                     class="button--secondary"
+                    @click="subscribe"
                 />
             </div>
         </div>
-        <div class="newsletter-section__container" v-if="isSent && !isLoading">
-            <h2 class="heading-2">
+        <div class="newsletter-section__container" v-if="isNewsletterSubscribed && !isLoadingNewsletter">
+            <h2 class="heading-2" v-if="!isNewsletterUpdated">
                 Thank you for subscribing!
+            </h2>
+            <h2 class="heading-2" v-else>
+                Changes saved!
             </h2>
             <h3 class="heading-3">
                 You can personalize your newsletter preferences
@@ -98,11 +102,12 @@
             <UiButton
                 placeholder="Save preferences"
                 type="button"
+                @click="update"
             />
         </div>
         <UiLoader
             text="We are subscribing you..."
-            v-else-if="!isSent && isLoading"
+            v-else-if="isLoadingNewsletter"
         />
     </section>
 </template>
@@ -123,38 +128,6 @@
                     name: null,
                     email: null
                 },
-                isLoading: false,
-                isSent: true,
-                categories: [
-                    {
-                        name: 'Email nurturing',
-                        id: 1
-                    },
-                    {
-                        name: 'Marketing',
-                        id: 2
-                    },
-                    {
-                        name: 'UI/UX',
-                        id: 3
-                    },
-                    {
-                        name: 'Google Ads',
-                        id: 4
-                    },
-                    {
-                        name: 'Project management',
-                        id: 5
-                    },
-                    {
-                        name: 'Webinars',
-                        id: 6
-                    },
-                    {
-                        name: 'Case Studies',
-                        id: 7
-                    }
-                ]
             }
         },
         computed: {
@@ -171,12 +144,16 @@
             ...mapGetters({
                 isLoadingNewsletter: 'isLoadingNewsletter',
                 isNewsletterSubscribed: 'isNewsletterSubscribed',
-                newsletterError: 'newsletterError'
+                isNewsletterUpdated: 'isNewsletterUpdated',
+                newsletterError: 'newsletterError',
+                categories: 'categories',
+                sessionKey: 'sessionKey'
             })
         },
         methods: {
             ...mapActions({
-                subscribeToNewsletter: 'subscribeToNewsletter'
+                subscribeToNewsletter: 'subscribeToNewsletter',
+                updateNewsletter: 'updateNewsletter'
             }),
             validateName() {
                 if(this.$validate.nameformat(this.newsletter.name))
@@ -191,7 +168,6 @@
                     this.errors.email = 'The email adress is invalid';
             },
             addNewsletterCategory(categoryId) {
-                console.log(33);
                 if(this.newsletterCategories.includes(categoryId)) {
                     for(let i = 0; i < this.newsletterCategories.length; i++) {
                         if(this.newsletterCategories[i] == categoryId) {
@@ -201,6 +177,21 @@
                     }
                 } else
                     this.newsletterCategories.push(categoryId);
+            },
+            subscribe() {
+                let formData = this.newsletter;
+                formData.session_key = this.sessionKey;
+                this.subscribeToNewsletter(JSON.stringify(formData));
+            },
+            update() {
+                let formData = this.newsletter;
+                formData.session_key = this.sessionKey;
+                formData.frequency = this.newsletterFrequency;
+                if(this.newsletterCategories.length == 0)
+                    formData.categories = null;
+                else    
+                    formData.categories = JSON.stringify(this.newsletterCategories);
+                this.updateNewsletter(JSON.stringify(formData));
             }
         }
     }

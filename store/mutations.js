@@ -6,6 +6,9 @@ const mutations = {
     IS_NEWSLETTER_SUBSCRIBED(state, status) {
         state.isNewsletterSubscribed = status;
     },
+    IS_NEWSLETTER_UPDATED(start, status) {
+        start.isNewsletterUpdated = status
+    },
     NEWSLETTER_ERRORS(state, error) {
         state.newsletterError = error;
     },
@@ -32,10 +35,20 @@ const mutations = {
     },
     //articles
     IS_LOADING_ARTILCES(state, status) {
-        state.isLoadingArticles = status
+        state.isLoadingArticles = status;
     },
     ARTICLES(state, payload) {
-        state.articles = payload;
+        payload.categories.forEach(category => {
+            let newCagetory = {
+                id: category.id,
+                name: category.name
+            }
+            if(!state.categories.includes(newCagetory))
+                state.categories.push(newCagetory);
+            category.articles.forEach(article => {
+                state.articles.push(article);
+            });
+        });
     },
     ARTICLES_ERRORS(state, payload) {
         state.articlesErrors = payload;

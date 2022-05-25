@@ -13,7 +13,7 @@
                 </NuxtLink>
             </div>
             <BlogCard
-                v-for="(blog, i) in blogPosts"
+                v-for="(blog, i) in articlesShort"
                 :key="'blog' + i"
                 :blog="blog"
                 class="home-blog__card"
@@ -23,30 +23,21 @@
 </template>
 
 <script>
+    import {mapActions, mapGetters} from 'vuex';
+
     export default {
-        data() {
-            return {
-                blogPosts: [
-                    {
-                        slug: '/blog/inbound-marketing-and-its-benefits',
-                        title: 'Inbound marketing and it’s benefits',
-                        imageUrl: '',
-                        tags: ['Marketing', 'Strategy']
-                    },
-                    {
-                        slug: '/blog/inbound-marketing-and-its-benefits',
-                        title: 'Inbound marketing and it’s benefits',
-                        imageUrl: '',
-                        tags: ['Marketing', 'Strategy']
-                    },
-                    {
-                        slug: '/blog/inbound-marketing-and-its-benefits',
-                        title: 'Inbound marketing and it’s benefits',
-                        imageUrl: '',
-                        tags: ['Marketing', 'Strategy']
-                    }
-                ]
-            }
+        methods: {
+            ...mapActions({
+                fetchArticles: 'fetchArticles'
+            })
+        },
+        computed: {
+            ...mapGetters({
+                articlesShort: 'articlesShort'
+            })
+        },
+        mounted() {
+            this.fetchArticles();
         }
     }
 </script>

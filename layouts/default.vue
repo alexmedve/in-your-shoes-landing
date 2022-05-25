@@ -38,8 +38,7 @@
             async $route(to, from) {
                 let pageName = to.name
                 if(
-                    pageName !== 'blog-slug' &&
-                    pageName !== 'index' && 
+                    pageName !== 'blog-id' &&
                     pageName !== 'newsletter-preference' &&
                     pageName !== 'terms-and-conditions'
                 ) {
@@ -48,7 +47,12 @@
                     }
                     this.sessionPages(pageName);
                 }
-                this.updateSessionData(this.sessionData);
+                let formData = {
+                    pages: this.sessionData.pages,
+                    articles: this.sessionData.articles,
+                    session_key: this.sessionData.key
+                }
+                this.updateSessionData(JSON.stringify(formData));
             },
         },
         computed: {

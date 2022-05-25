@@ -10,10 +10,10 @@
                 You are one step away from your new online marketing strategy. We'll contact you as soon as possible to organize a brief call.
             </p>
         </div>
-        <form @submit.prevent="sendForm" class="contact-form__form">
+        <form @submit.prevent="sendForm" class="contact-form__form" v-if="!isLoadingContact && !isContactSent">
             <UiInput
                 name="contact-name"
-                placeholder="name"
+                placeholder="Name"
                 @input="contactForm.name = $event, validateName()"
                 @blur="validateName"
                 :value="contactForm.name"
@@ -63,6 +63,15 @@
                 type="submit"
             />
         </form>
+        <div class="contact-form__form contact-form__form--no-padding" v-if="!isLoadingContact && isContactSent">
+            <h3 class="heading-3">
+                Thank you! We will get back to you as soon as possible!
+            </h3>
+        </div>
+        <div class="contact-form__form contact-form__form--no-padding" v-if="isLoadingContact">
+            <UiLoader text="Sending contact details..." >
+            </UiLoader>
+        </div>
     </header>
 </template>
 
@@ -95,7 +104,8 @@ export default {
         ...mapGetters({
             isLoadingContact: 'isLoadingContact',
             isContactSent: 'isContactSent',
-            contactError: 'contactError'
+            contactError: 'contactError',
+            sessionKey: 'sessionKey'
         }),
         validateForm() {
             if(
@@ -120,7 +130,9 @@ export default {
         async sendForm(e) {
             if(this.validateForm)
             {
-                this.sendContactForm(this.contactForm);
+                let formData = this.contactForm;
+                formData.session_key = this.sessionKey;
+                this.sendContactForm(JSON.stringify(formData));
             }
             else
                 this.errors.form = 'Please fill in the form';

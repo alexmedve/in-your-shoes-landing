@@ -38,6 +38,10 @@
             width: 100%;
         }
 
+        &--no-padding {
+            padding-top: 0;
+        }
+
         @include media-breakpoint-down(lg) {
             grid-column: 1 / -1;
             padding-top: 0;

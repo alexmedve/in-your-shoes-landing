@@ -2,12 +2,38 @@ const actions = {
     //newsletter subscribe
     async subscribeToNewsletter({commit}, payload) {
         commit('IS_LOADING_NEWSLETTER', true);
-        await this.$axios.post('/newsletter', payload)
+        console.log(payload);
+        await this.$axios.post('/newsletter/subscribe', payload, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        })
         .then(function (response) {
             console.log(response);
-            if(response.status == 200 && response.data.errors == false) {
+            if(response.status == 200) {
                 commit('IS_LOADING_NEWSLETTER', false);
                 commit('IS_NEWSLETTER_SUBSCRIBED', true);
+            } else {
+                commit('NEWSLETTER_ERRORS', response.data.errors);
+            }
+        })
+        .catch(function (error) {
+            commit('NEWSLETTER_ERRORS', error);
+        });
+    },
+    async updateNewsletter({commit}, payload) {
+        commit('IS_LOADING_NEWSLETTER', true);
+        console.log(payload);
+        await this.$axios.post('/newsletter/update', payload, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        })
+        .then(function (response) {
+            console.log(response);
+            if(response.status == 200) {
+                commit('IS_LOADING_NEWSLETTER', false);
+                commit('IS_NEWSLETTER_UPDATED', true);
             } else {
                 commit('NEWSLETTER_ERRORS', response.data.errors);
             }
@@ -19,10 +45,14 @@ const actions = {
     //contact form
     async sendContactForm({commit}, payload) {
         commit('IS_LOADING_CONTACT', true);
-        await this.$axios.post('/contact', payload)
+        await this.$axios.post('/contact', payload, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        })
         .then(function (response) {
             console.log(response);
-            if(response.status == 200 && response.data.errors == false) {
+            if(response.status == 200) {
                 commit('IS_LOADING_CONTACT', false);
                 commit('IS_CONTACT_SENT', true);
             } else {
@@ -35,10 +65,11 @@ const actions = {
     },
     //user tracking
     async getSessionKey({commit}) {
-        await this.$axios.get('/session/get_key')
+        await this.$axios.get('/session/start')
         .then(function (response) {
-            if(response.status == 200 && response.data.errors == false) {
-                commit('SESSION_KEY', response.data.data);
+            console.log(response);
+            if(response.status == 200) {
+                commit('SESSION_KEY', response.data.session_key);
             }
         })
         .catch(function (error) {
@@ -46,7 +77,11 @@ const actions = {
         });
     },
     async updateSessionData({commit}, payload) {
-        await this.$axios.post('/session/update', payload);
+        await this.$axios.post('/session/update', payload, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        });
     },
     sessionKeyFromLocalStorage({commit}, payload) {
         commit('SESSION_KEY', payload);
@@ -60,12 +95,12 @@ const actions = {
     //articles
     async fetchArticles({commit}) {
         commit('IS_LOADING_ARTILCES', true);
-        await this.$axios.get('/newsletter')
+        await this.$axios.get('/blog')
         .then(function (response) {
             console.log(response);
-            if(response.status == 200 && response.data.errors == false) {
+            if(response.status == 200) {
                 commit('IS_LOADING_ARTILCES', false);
-                commit('ARTICLES', response.data.data);
+                commit('ARTICLES', response.data);
             } else {
                 commit('ARTICLES_ERRORS', error);
             }
@@ -74,14 +109,14 @@ const actions = {
             commit('ARTICLES_ERRORS', error);
         });
     },
-    async fetchArticle({commit}, slug) {
+    async fetchArticle({commit}, id) {
         commit('IS_LOADING_ARTILCE', true);
-        await this.$axios.get(`/article/${slug}`)
+        await this.$axios.get(`/blog/${id}`)
         .then(function (response) {
             console.log(response);
-            if(response.status == 200 && response.data.errors == false) {
+            if(response.status == 200) {
                 commit('IS_LOADING_ARTILCE', false);
-                commit('ARTICLE', response.data.data);
+                commit('ARTICLE', response.data.article);
             } else {
                 commit('ARTICLE_ERRORS', error);
             }

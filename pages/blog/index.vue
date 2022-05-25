@@ -6,7 +6,7 @@
             </h2>
         </header>
         <BlogCard
-            v-for="(blog, i) in blogPosts"
+            v-for="(blog, i) in articles"
             :key="'blog' + i"
             :blog="blog"
         />
@@ -14,49 +14,22 @@
 </template>
 
 <script>
+    import {mapActions, mapGetters} from 'vuex';
+
     export default {
         name: 'blog',
-        data() {
-            return {
-                blogPosts: [
-                    {
-                        slug: '/blog/inbound-marketing-and-its-benefits',
-                        title: 'Inbound marketing and it’s benefits',
-                        imageUrl: '',
-                        tags: ['Marketing', 'Strategy']
-                    },
-                    {
-                        slug: '/blog/inbound-marketing-and-its-benefits',
-                        title: 'Inbound marketing and it’s benefits',
-                        imageUrl: '',
-                        tags: ['Marketing', 'Strategy']
-                    },
-                    {
-                        slug: '/blog/inbound-marketing-and-its-benefits',
-                        title: 'Inbound marketing and it’s benefits',
-                        imageUrl: '',
-                        tags: ['Marketing', 'Strategy']
-                    },
-                    {
-                        slug: '/blog/inbound-marketing-and-its-benefits',
-                        title: 'Inbound marketing and it’s benefits',
-                        imageUrl: '',
-                        tags: ['Marketing', 'Strategy']
-                    },
-                    {
-                        slug: '/blog/inbound-marketing-and-its-benefits',
-                        title: 'Inbound marketing and it’s benefits',
-                        imageUrl: '',
-                        tags: ['Marketing', 'Strategy']
-                    },
-                    {
-                        slug: '/blog/inbound-marketing-and-its-benefits',
-                        title: 'Inbound marketing and it’s benefits',
-                        imageUrl: '',
-                        tags: ['Marketing', 'Strategy']
-                    },
-                ]
-            }
+        methods: {
+            ...mapActions({
+                fetchArticles: 'fetchArticles'
+            })
+        },
+        computed: {
+            ...mapGetters({
+                articles: 'articles'
+            })
+        },
+        mounted() {
+            this.fetchArticles();
         }
     }
 </script>
