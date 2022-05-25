@@ -42,28 +42,31 @@
             <div class="service-result__numbers">
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        61%
+                        33%
                     </div>
                     <h4 class="heading-4">
-                        Visits with conversion
+                        More emails opened
                     </h4>
                 </div>
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        127%
+                        20%
                     </div>
                     <h4 class="heading-4">
-                        More traffic
+                        Increase in sales
                     </h4>
                 </div>
             </div>
             <div class="service-result__details">
                 <div class="service-result__logo">
-
+                    <img src="@/assets/images/testimonials/ghostery.png" alt="Ghostery" class="u-image-contain">
                 </div>
                 <div class="service-result__line"></div>
                 <p class="body-copy">
-                    Descriere digital marketing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    Ghostery is an online privacy company that helps its users to maintain control of their data and to block spamming ads. They keep their users engaged by sending regular e-mails with articles or new features. Seems to be simple. But before our help, they were doing it kinda wrong. Without a proper strategy, those automated e-mails only risk to bore the reader and make him give on the newsletter, potentially losing clients.
+                    <br>
+                    <br>
+                    Together with our consultancy, we set up an automated but preference-targeted nurture strategy that makes each user feel "special". This involved a rise by 33% of e-mails reviewed and an increase by 20% of upselling.
                 </p>
             </div>
         </section>

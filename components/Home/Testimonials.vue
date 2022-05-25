@@ -42,12 +42,12 @@
                     },
                     {
                         title: 'We’ve found the InYourShoes team to be a passionate partner',
-                        content: 'The US market has been a major challenge for us, but we’ve found the NoGood team to be a passionate partner that really understands the digital funnel from top to bottom. Our acquisition and retention numbers are continuing to improve every month.',
+                        content: 'The US market has been a major challenge for us, but we’ve found the InYourShoes team to be a passionate partner that really understands the digital funnel from top to bottom. Our acquisition and retention numbers are continuing to improve every month.',
                         imageUrl: 'carli.svg'
                     },
                     {
-                        title: 'The NoGood team is fast, savvy, and truly ahead of the curve',
-                        content: 'The growth squad model helped us stay agile yet laser-focused in achieving key metrics and growth objectives. NoGood is quick and consistent in delivering top and middle funnel growth.',
+                        title: 'The InYourShoes team is fast, savvy, and truly ahead of the curve',
+                        content: 'The growth squad model helped us stay agile yet laser-focused in achieving key metrics and growth objectives. InYourShoes is quick and consistent in delivering top and middle funnel growth.',
                         imageUrl: 'steer.svg'
                     }
                 ]

@@ -7,6 +7,9 @@
             <h3 class="heading-3">
                 We’ll only send relevant content. We promise :)
             </h3>
+            <div class="body-copy u-text-danger u-text-medium" v-if="newsletterError">
+                {{newsletterError}}
+            </div>
             <div class="input-group">
                 <UiInput
                     name="newsletter-name"

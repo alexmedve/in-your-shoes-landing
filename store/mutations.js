@@ -38,6 +38,8 @@ const mutations = {
         state.isLoadingArticles = status;
     },
     ARTICLES(state, payload) {
+        state.categories = [];
+        state.articles = [];
         payload.categories.forEach(category => {
             let newCagetory = {
                 id: category.id,

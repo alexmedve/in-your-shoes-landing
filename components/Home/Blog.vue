@@ -42,7 +42,8 @@
             })
         },
         mounted() {
-            this.fetchArticles();
+            if(this.articlesShort.length == 0)
+                this.fetchArticles();
         }
     }
 </script>

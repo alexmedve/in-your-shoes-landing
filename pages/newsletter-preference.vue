@@ -5,7 +5,7 @@
                 Newsletter preference center
             </h2>
             <h4 class="heading-4">
-                Email adress: <span class="u-text-secondary">medvealex0@gmail.com</span>
+                Email adress: <span class="u-text-secondary">user@email.com</span>
             </h4>
             <div class="newsletter-preference__row">
                 <h4 class="heading-4">
@@ -107,11 +107,11 @@
                 isSent: true,
                 categories: [
                     {
-                        name: 'Email nurturing',
+                        name: 'Email marketing',
                         id: 1
                     },
                     {
-                        name: 'Marketing',
+                        name: 'Data Analytics',
                         id: 2
                     },
                     {

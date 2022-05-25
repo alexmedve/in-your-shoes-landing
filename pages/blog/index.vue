@@ -32,7 +32,8 @@
             })
         },
         mounted() {
-            this.fetchArticles();
+            if(this.articles.length == 0)
+                this.fetchArticles();
         }
     }
 </script>

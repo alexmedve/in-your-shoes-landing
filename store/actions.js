@@ -14,11 +14,13 @@ const actions = {
                 commit('IS_LOADING_NEWSLETTER', false);
                 commit('IS_NEWSLETTER_SUBSCRIBED', true);
             } else {
-                commit('NEWSLETTER_ERRORS', response.data.errors);
+                commit('NEWSLETTER_ERRORS', "You are already subscribed");
+                commit('IS_LOADING_NEWSLETTER', false);
             }
         })
         .catch(function (error) {
-            commit('NEWSLETTER_ERRORS', error);
+            commit('NEWSLETTER_ERRORS', "You are already subscribed");
+            commit('IS_LOADING_NEWSLETTER', false);
         });
     },
     async updateNewsletter({commit}, payload) {
