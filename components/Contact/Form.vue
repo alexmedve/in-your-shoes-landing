@@ -7,7 +7,7 @@
                 </span>
             </h2>
             <p class="body-copy">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                You are one step away from your new online marketing strategy. We'll contact you as soon as possible to organize a brief call.
             </p>
         </div>
         <form @submit.prevent="sendForm" class="contact-form__form">

@@ -21,7 +21,7 @@
             </div>
             <div class="blog-post__meta">
                 <div class="blog-post__avatar">
-                    <img src="@/assets/images/team/alexandru-medvedeu.jpg" alt="Alexandru Medvedeu" class="u-image-cover">
+                    <img src="@/assets/images/team/alex.jpg" alt="Alexandru Medvedeu" class="u-image-cover">
                 </div>
                 <div class="blog-post__meta-info">
                     <div class="small-copy">

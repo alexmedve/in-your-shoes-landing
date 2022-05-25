@@ -10,7 +10,7 @@
         </h2>
         <div class="about-mission__content">
             <p class="body-copy">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                We want to know our partners' business as good as possible. This allows us to become more of a in-house team that an external agency. Our members have various backgrounds and that gives us an understanding from a bunch of different perspectives. 
             </p>
             <div class="about-mission__image">
                 <img src="@/assets/images/home-about-shoes.jpg" alt="Shoes" class="u-image-cover">

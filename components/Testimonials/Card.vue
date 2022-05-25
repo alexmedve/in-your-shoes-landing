@@ -2,7 +2,7 @@
     <div class="testimonial-card card-white">
         <div class="testimonial-card__header">
             <div class="testimonial-card__logo">
-                <!-- <img src="testimonial.imgUrl" alt="" class="u-image-contain"> -->
+                <img :src="require(`~/assets/images/testimonials/${testimonial.imageUrl}`)" class="u-image-contain">
             </div>
             <h4 class="heading-4">
                 {{testimonial.title}}

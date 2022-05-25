@@ -45,6 +45,7 @@
         background-color: $color-secondary;
         opacity: 0.3;
         transition: opacity .3s ease-out;
+        cursor: pointer;
 
         &--active {
             opacity: 1;

@@ -8,6 +8,12 @@
                 <p class="body-copy">
                     A Digital Consulting Agency based in Romania. We are a team of Developers, Designers and Marketing Specialists who are working together to get the best overview of the online business industry. Our passions complement one another and we always deliver to our client's expectations. Even beyond.
                 </p>
+                <NuxtLink
+                    class="link"
+                    to="/about-us"
+                >
+                    Read more
+                </NuxtLink>
             </div>
             <div class="home-about__dots-container">
                 <div class="home-about__dots">

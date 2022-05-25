@@ -28,17 +28,17 @@
                 members: [
                     {
                         name: 'Alexandru Medvedeu',
-                        imageUrl: 'alexandru-medvedeu.jpg',
+                        imageUrl: 'alex.jpg',
                         role: 'CEO, UI/UX Designer'
                     },
                     {
                         name: 'Flavian Babciuc',
-                        imageUrl: 'alexandru-medvedeu.jpg',
+                        imageUrl: 'flavian.jpg',
                         role: 'Marketing Specialist'
                     },
                     {
                         name: 'Serban Alexandru',
-                        imageUrl: 'alexandru-medvedeu.jpg',
+                        imageUrl: 'serban.jpg',
                         role: 'Head of Development'
                     }
                 ]
