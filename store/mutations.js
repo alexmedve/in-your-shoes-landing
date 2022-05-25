@@ -19,6 +19,36 @@ const mutations = {
     CONTACT_ERRORS(state, error) {
         state.contactError = error;
     },
+    //user tracking
+    SESSION_KEY(state, key) {
+        state.session.key = key;
+        localStorage.setItem('sessionKey', key);
+    },
+    SESSION_PAGES(state, page) {
+        state.session.pages.push(page);
+    },
+    SESSION_ARTICLES(state, article) {
+        state.session.articles.push(article);
+    },
+    //articles
+    IS_LOADING_ARTILCES(state, status) {
+        state.isLoadingArticles = status
+    },
+    ARTICLES(state, payload) {
+        state.articles = payload;
+    },
+    ARTICLES_ERRORS(state, payload) {
+        state.articlesErrors = payload;
+    },
+    IS_LOADING_ARTILCE(state, status) {
+        state.isLoadingArticle = status;
+    },
+    ARTICLE(state, payload) {
+        state.article = payload;
+    },
+    ARTICLES_ERROR(state, payload) {
+        state.articleErrors = payload;
+    }
 };
 
 export default mutations;

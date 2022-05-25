@@ -69,3 +69,9 @@
         </section>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'data-analytics'
+}
+</script>

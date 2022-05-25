@@ -60,7 +60,22 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex';
+
     export default {
-        name: 'blog-post'
+        name: 'blog-post',
+        data() {
+            return {
+                articleId: 3
+            }
+        },
+        methods: {
+            ...mapActions({
+                sessionArticles: 'sessionArticles'
+            })
+        },
+        mounted() {
+            this.sessionArticles(this.articleId);
+        }
     }
 </script>

@@ -68,3 +68,9 @@
         </section>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'project-management'
+}
+</script>

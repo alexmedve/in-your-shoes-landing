@@ -24,6 +24,7 @@
                     class="button--small"
                     type="router-link"
                     link="/contact"
+                    @click.native="showMobileMenu = false"
                 />
             </div>
             <div class="navbar__mobile-toggle" @click="showMobileMenu = !showMobileMenu">

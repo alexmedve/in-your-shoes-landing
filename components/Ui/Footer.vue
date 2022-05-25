@@ -78,8 +78,8 @@
                         route: 'digital-marketing'
                     },
                     { 
-                        name: 'Email campaigns',
-                        route: 'email-campaigns'
+                        name: 'Emai Marketing',
+                        route: 'email-marketing'
                     },
                     { 
                         name: 'UI/UX Design',

@@ -3,26 +3,71 @@
         <UiNavbar />
         <Nuxt />
         <UiCta v-if="showCtaSection" />
-        <UiNewsletter />
+        <UiNewsletter v-if="showNesletterSection" />
         <UiFooter />
         <UiCookieBanner />
     </div>
 </template>
 
 <script>
-export default {
-    mounted() {
-        // if (location.protocol !== 'https:') {
-        //     location.replace(`https:${location.href.substring(location.protocol.length)}`);
-        // }
-    },
-    methods: {
-        
-    },
-    computed: {
-        showCtaSection() {
-            return (this.$route.name !== 'contact');
+    import {mapActions, mapGetters} from 'vuex';
+
+    export default {
+        mounted() {
+            // if (location.protocol !== 'https:') {
+            //     location.replace(`https:${location.href.substring(location.protocol.length)}`);
+            // }
+            this.checkSessionKey();
+        },
+        methods: {
+            ...mapActions({
+                getSessionKey: 'getSessionKey',
+                sessionKeyFromLocalStorage: 'sessionKeyFromLocalStorage',
+                sessionPages: 'sessionPages',
+                updateSessionData: 'updateSessionData'
+            }),
+            checkSessionKey() {
+                let sessionKey = localStorage.getItem('sessionKey');
+                if(sessionKey) 
+                    this.sessionKeyFromLocalStorage(sessionKey);
+                else
+                    this.getSessionKey();
+            }
+        },
+        watch: {
+            async $route(to, from) {
+                let pageName = to.name
+                if(
+                    pageName !== 'blog-slug' &&
+                    pageName !== 'index' && 
+                    pageName !== 'newsletter-preference' &&
+                    pageName !== 'terms-and-conditions'
+                ) {
+                    if(pageName.startsWith('services-')) {
+                        pageName = pageName.slice(9);
+                    }
+                    this.sessionPages(pageName);
+                }
+                this.updateSessionData(this.sessionData);
+            },
+        },
+        computed: {
+            ...mapGetters({
+                sessionData: 'sessionData'
+            }),
+            showCtaSection() {
+                return (
+                    this.$route.name !== 'contact',
+                    this.$route.name !== 'newsletter-preference',
+                    this.$route.name !== 'terms'
+                );
+            },
+            showNesletterSection() {
+                return (
+                    this.$route.name !== 'newsletter-preference',
+                    this.$route.name !== 'terms'
+                )
+            }
         }
     }
-}
 </script>

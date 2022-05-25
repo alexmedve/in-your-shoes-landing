@@ -5,7 +5,7 @@
                 <div class="service-about__content">
                     <h2 class="heading-2">
                         <span class="text-highlight">
-                            E-mail Campaigns
+                            E-mail Marketing
                         </span>
                     </h2>
                     <p class="body-copy">
@@ -17,7 +17,7 @@
                 </div>
                 <div class="service-about__content service-about__content--second">
                     <h2 class="heading-2">
-                        E-mail Campaigns that
+                        E-mail Marketing that
                         breaks through the noise
                     </h2>
                     <p class="body-copy">
@@ -69,3 +69,9 @@
         </section>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'email-marketing'
+}
+</script>

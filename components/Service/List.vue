@@ -41,9 +41,9 @@
                         route: 'data-analytics'
                     },
                     { 
-                        name: 'Email campaigns',
+                        name: 'Emai Marketing',
                         description: '2-3 cuvinte despre serviciu',
-                        route: 'email-campaigns'
+                        route: 'email-marketing'
                     },
                     { 
                         name: 'UI/UX Design',

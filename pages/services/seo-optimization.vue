@@ -70,3 +70,9 @@
         </section>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'seo'
+}
+</script>
