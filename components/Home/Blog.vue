@@ -1,6 +1,6 @@
 <template>
     <section class="home-blog section-m-top">
-        <div class="container">
+        <div class="container" v-if="!isLoadingArticles && articlesShort.length > 0">
             <div class="home-blog__text">
                 <h2 class="heading-2 home-blog__title">
                     Blog posts
@@ -19,6 +19,10 @@
                 class="home-blog__card"
             />
         </div>
+        <div class="container" v-if="isLoadingArticles">
+            <UiLoader text="Loading latest blog posts...">
+            </UiLoader>
+        </div>
     </section>
 </template>
 
@@ -33,7 +37,8 @@
         },
         computed: {
             ...mapGetters({
-                articlesShort: 'articlesShort'
+                articlesShort: 'articlesShort',
+                isLoadingArticles: 'isLoadingArticles'
             })
         },
         mounted() {

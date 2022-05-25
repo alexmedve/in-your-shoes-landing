@@ -46,6 +46,10 @@
                 </a>
             </div>
         </section>
+        <section class="blog-post section-m-top" v-else-if="isLoadingArticle">
+            <UiLoader text="Loading blog post...">
+            </UiLoader>
+        </section>
     </div>
 </template>
 
@@ -67,7 +71,8 @@
         },
         computed: {
             ...mapGetters({
-                article: 'article'
+                article: 'article',
+                isLoadingArticle: 'isLoadingArticle'
             }),
             articleCategories() {
                 let result = "";

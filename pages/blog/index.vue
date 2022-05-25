@@ -10,6 +10,8 @@
             :key="'blog' + i"
             :blog="blog"
         />
+        <UiLoader text="Loading latest blog posts..." v-if="isLoadingArticles">
+        </UiLoader>
     </div>
 </template>
 
@@ -25,7 +27,8 @@
         },
         computed: {
             ...mapGetters({
-                articles: 'articles'
+                articles: 'articles',
+                isLoadingArticles: 'isLoadingArticles'
             })
         },
         mounted() {
