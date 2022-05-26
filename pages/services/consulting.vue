@@ -42,28 +42,31 @@
             <div class="service-result__numbers">
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        61%
+                        93%
                     </div>
                     <h4 class="heading-4">
-                        Visits with conversion
+                        More visits
                     </h4>
                 </div>
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        127%
+                        37%
                     </div>
                     <h4 class="heading-4">
-                        More traffic
+                        Increase in sales
                     </h4>
                 </div>
             </div>
             <div class="service-result__details">
                 <div class="service-result__logo">
-
+                    <img src="@/assets/images/testimonials/mobexpert.png" alt="Mobexpert" class="u-image-contain">
                 </div>
                 <div class="service-result__line"></div>
                 <p class="body-copy">
-                    Descriere digital marketing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    Mobexpert is a local furniture company, which was struggling with getting new customers and in closing a sale through its online platform. Before starting the partnership with InYourShoes, it wasn't even aware of what it was doing wrong or what could be done better. With the help of our consultancy, together we identified the obstacles and set up a strategy to overcome them.
+                    <br>
+                    <br>
+                    From SEO to e-mail nurturing, in a period of 6 months, their website was accessed 93% more and their sales grow up by 37%. Isn't that awesome?! Don't you want to be the next one in our success stories? See you soon!
                 </p>
             </div>
         </section>

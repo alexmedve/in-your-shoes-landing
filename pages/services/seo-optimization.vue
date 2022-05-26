@@ -43,28 +43,31 @@
             <div class="service-result__numbers">
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        61%
+                        73%
                     </div>
                     <h4 class="heading-4">
-                        Visits with conversion
+                        Boost in search results
                     </h4>
                 </div>
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        127%
+                        21%
                     </div>
                     <h4 class="heading-4">
-                        More traffic
+                        Increased revenue
                     </h4>
                 </div>
             </div>
             <div class="service-result__details">
                 <div class="service-result__logo">
-
+                    <img src="@/assets/images/testimonials/feelit.png" alt="Feel IT Service" class="u-image-contain">
                 </div>
                 <div class="service-result__line"></div>
                 <p class="body-copy">
-                    Descriere digital marketing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    Feel IT is a local company that provides IT services. Before our collaboration they had stunning reviews and feedback from their customers, but they were having difficulties in reaching new potential clients. This because their website, even if it was easy to use and well structured, was not appearing in suggested search results. 
+                    <br>
+                    <br>
+                    InYourShoes promptly noticed this issue and through SEO, mixing the use of relevant keywords in titles, meta descriptions, headlines (H1) and schema markup to specify the page's content meaning, boosted their display in search results by 73%, also increasing revenue by 21%. What are you waiting? Join us for even better results!
                 </p>
             </div>
         </section>

@@ -42,28 +42,31 @@
             <div class="service-result__numbers">
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        61%
+                        26%
                     </div>
                     <h4 class="heading-4">
-                        Visits with conversion
+                        Increase in income
                     </h4>
                 </div>
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        127%
+                        19%
                     </div>
                     <h4 class="heading-4">
-                        More traffic
+                        Cost avoidance
                     </h4>
                 </div>
             </div>
             <div class="service-result__details">
                 <div class="service-result__logo">
-
+                    <img src="@/assets/images/testimonials/invisibly.png" alt="Invisibly" class="u-image-contain">
                 </div>
                 <div class="service-result__line"></div>
                 <p class="body-copy">
-                    Descriere digital marketing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    Invisibly is a data collection company with an already good audience. But raw data isn't that efficient without a proper interpretation, right? With our expertise in this sector and automation tools, we increased their income by 26% and achieved a cost avoidance of 19%. How? By studying historical data we created a clear picture of what they were doing, discovered what the actual trends are and made scenarios on the possible next steps.\
+                    <br>
+                    <br>
+                    Through our consultancy we set up together an improved strategy for campaigns to onboard new targeted clients easily and at the same time we helped re-organizing their internal data, also finding new ways to use it. Win win.
                 </p>
             </div>
         </section>

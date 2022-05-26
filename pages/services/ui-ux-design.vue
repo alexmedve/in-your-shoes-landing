@@ -42,28 +42,31 @@
             <div class="service-result__numbers">
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        61%
+                        51%
                     </div>
                     <h4 class="heading-4">
-                        Visits with conversion
+                        More visitors
                     </h4>
                 </div>
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        127%
+                        39%
                     </div>
                     <h4 class="heading-4">
-                        More traffic
+                        Increase in sales
                     </h4>
                 </div>
             </div>
             <div class="service-result__details">
                 <div class="service-result__logo">
-
+                    <img src="@/assets/images/testimonials/carli.svg" alt="Carli" class="u-image-contain">
                 </div>
                 <div class="service-result__line"></div>
                 <p class="body-copy">
-                    Descriere digital marketing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    Fratelli Carli is a food company with signature Italian products. Their website allows online shopping and keeps the consumers updated with new products. Before starting a partnership with InYourShoes they were struggling with an always busy customer support line and a low sale conversion. Thanks to our vision and expertise, we managed to find the reason why - an old and cumbersome website that was not intuitive for everyone. Our specialists in UI/UX quickly re-imagined the platform, granting a new impactful look that would attract and impress the client, why also keeping it simple to navigate.
+                    <br>
+                    <br>
+                    Since the beginning of our journey, we brought a sensational 39% raise in sales and 51% more visitors.
                 </p>
             </div>
         </section>

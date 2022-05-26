@@ -8,6 +8,10 @@
         transition: border-color .3s ease-out;
     }
 
+    & > .heading-4 {
+        min-height: 54px;
+    }
+
     &__image {
         height: 140px;
         border-radius: 5px;

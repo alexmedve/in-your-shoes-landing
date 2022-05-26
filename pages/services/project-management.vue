@@ -41,28 +41,31 @@
             <div class="service-result__numbers">
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        61%
+                        33%
                     </div>
                     <h4 class="heading-4">
-                        Visits with conversion
+                        Cost avoidance
                     </h4>
                 </div>
                 <div class="service-result__number">
                     <div class="heading-1 u-text-secondary">
-                        127%
+                        37%
                     </div>
                     <h4 class="heading-4">
-                        More traffic
+                        Increased productivity
                     </h4>
                 </div>
             </div>
             <div class="service-result__details">
                 <div class="service-result__logo">
-
+                    <img src="@/assets/images/testimonials/steer.svg" alt="Steer" class="u-image-contain">
                 </div>
                 <div class="service-result__line"></div>
                 <p class="body-copy">
-                    Descriere digital marketing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    Steer is a global business consultancy company. Being an already big and international company, their main obstacle is project management. Before our partnership they were dealing with a low performance and efficiency in their internal tasks.
+                    <br>
+                    <br>
+                    With our knowledge and help, we individuated those crucial areas and re-imagined their workflows to have a better process organization and visibility, involving a 33% cost avoidance on management fees and a grow of productivity by 37%.
                 </p>
             </div>
         </section>
