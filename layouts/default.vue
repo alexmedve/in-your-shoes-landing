@@ -48,11 +48,13 @@
                     this.sessionPages(pageName);
                 }
                 let formData = {
-                    pages: this.sessionData.pages,
-                    articles: this.sessionData.articles,
-                    session_key: this.sessionData.key
+                    "activity": {
+                        "pages": this.sessionData.pages,
+                        "articles": this.sessionData.articles,
+                        "session_key": this.sessionData.key
+                    }
                 }
-                this.updateSessionData(JSON.stringify(formData));
+                this.updateSessionData(formData);
             },
         },
         computed: {
